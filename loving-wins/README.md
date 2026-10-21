@@ -1,24 +1,17 @@
-# Loving Wins image assets
+# Loving Wins assets
 
-This folder is for Angela Whalon's Loving Wins website and funnel artwork.
+These images were visually identified from the files provided.
 
-## Files ready to upload
-- angela-headshot-casual.jpg
-- angela-headshot-smiling.jpg
-- child-explaining-kitchen.png
-- child-tantrum-entryway.png
-- family-playful-dance.png
-- family-reading-together.png
-- father-son-tidying.png
-- gold-heart-hands.png
-- morning-rush-entryway.png
-- mother-child-joyful-reading.png
-- thebefitway-racing-logo.png
-- two-superpower-rules-guide.png
+**Recommended placements:**
 
-Use a joyful child/family image for the landing-page hero. Use Angela's actual headshots for her biography. TheBeFITWay racing banner is a method logo, not the Loving Wins company logo. Reserve tantrum and morning-rush artwork for challenge/problem sections.
+- Logo / TheBeFITWay branding: `thebefitway-racing-logo.png` (note: this says TheBeFITWay, not Loving Wins).
+- Angela biography (primary portrait): `angela-headshot-smiling.jpg`; alternative `angela-headshot-casual.jpg`.
+- Hero positive emotion: `mother-child-joyful-reading.png` or `family-playful-dance.png`.
+- Problem section: `child-tantrum-entryway.png` or `morning-rush-entryway.png`.
+- Curiosity/engagement: `child-explaining-kitchen.png`.
+- Connection: `family-reading-together.png`.
+- Collaborating at home: `father-son-tidying.png`.
+- Free gift: `two-superpower-rules-guide.png`.
+- Decorative heart visual: `gold-heart-hands.png`.
 
-After uploading, public raw image links use this pattern:
-https://raw.githubusercontent.com/DavidBeeeee/image-assets/main/loving-wins/FILENAME
-
-Avoid uploading any private photographs without permission.
+A standalone **Loving Wins wordmark/logo** and **Susie memorial photograph** were not among these 12 uploaded files; do not substitute a different image and label it as either.
