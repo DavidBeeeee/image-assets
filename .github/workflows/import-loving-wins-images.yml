@@ -1,0 +1,39 @@
+name: Import Loving Wins public images
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/import-loving-wins-images.yml
+permissions:
+  contents: write
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download the ten existing public ClickFunnels files
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p loving-wins/from-clickfunnels
+          curl --fail --location --retry 3 --silent --show-error 'https://statics.myclickfunnels.com/workspace/edLwaz/image/24033584/file/e9de657badb3c19bb36c27a96562e7d8.png' --output 'loving-wins/from-clickfunnels/clickfunnels-24033584.png'
+          curl --fail --location --retry 3 --silent --show-error 'https://statics.myclickfunnels.com/workspace/edLwaz/image/24033574/file/66ce0b893674112530e203e2b5005b00.jpg' --output 'loving-wins/from-clickfunnels/clickfunnels-24033574.jpg'
+          curl --fail --location --retry 3 --silent --show-error 'https://statics.myclickfunnels.com/workspace/edLwaz/image/24033573/file/866518c7ee29c02b6c73838be5738461.jpg' --output 'loving-wins/from-clickfunnels/clickfunnels-24033573.jpg'
+          curl --fail --location --retry 3 --silent --show-error 'https://statics.myclickfunnels.com/workspace/edLwaz/image/24033582/file/968cacbefc96726b73e62244df4ab340.png' --output 'loving-wins/from-clickfunnels/clickfunnels-24033582.png'
+          curl --fail --location --retry 3 --silent --show-error 'https://statics.myclickfunnels.com/workspace/edLwaz/image/24033581/file/65fafc8f9809397bec2bce74814fae0f.png' --output 'loving-wins/from-clickfunnels/clickfunnels-24033581.png'
+          curl --fail --location --retry 3 --silent --show-error 'https://statics.myclickfunnels.com/workspace/edLwaz/image/24033580/file/0ef5a9f41a2a34a3af08f33080ed2779.png' --output 'loving-wins/from-clickfunnels/clickfunnels-24033580.png'
+          curl --fail --location --retry 3 --silent --show-error 'https://statics.myclickfunnels.com/workspace/edLwaz/image/24033579/file/068cd9e568f5b5f1bfa3a166705d2a02.png' --output 'loving-wins/from-clickfunnels/clickfunnels-24033579.png'
+          curl --fail --location --retry 3 --silent --show-error 'https://statics.myclickfunnels.com/workspace/edLwaz/image/24033578/file/a5b224ea16c759564916918fa75ce72d.png' --output 'loving-wins/from-clickfunnels/clickfunnels-24033578.png'
+          curl --fail --location --retry 3 --silent --show-error 'https://statics.myclickfunnels.com/workspace/edLwaz/image/24033577/file/3ccf118c56042db024bca847ce1f6e8e.png' --output 'loving-wins/from-clickfunnels/clickfunnels-24033577.png'
+          curl --fail --location --retry 3 --silent --show-error 'https://statics.myclickfunnels.com/workspace/edLwaz/image/24033575/file/378b578ddf05a340717cddde9bec61cb.png' --output 'loving-wins/from-clickfunnels/clickfunnels-24033575.png'
+          file loving-wins/from-clickfunnels/*
+      - name: Commit assets to image library
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add loving-wins/from-clickfunnels/
+          if ! git diff --cached --quiet; then
+            git commit -m "Import public Loving Wins ClickFunnels assets"
+            git push
+          fi
